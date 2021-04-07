@@ -5,7 +5,7 @@ admin.initializeApp();
 
 const database = admin.database();
 
-exports.scheduledFunction = functions.pubsub.schedule('5 12 * * *').onRun((context) => {
+exports.scheduledFunction = functions.pubsub.schedule('0 0 * * *').onRun((context) => {
 
     const parentRef = admin.database().ref("user");
 
@@ -35,6 +35,6 @@ exports.scheduledFunction = functions.pubsub.schedule('5 12 * * *').onRun((conte
     //parentRef.once('value').then()
 
     
-    console.log('This will be run every minute! ');
+    console.log('This will be run every 12 hours at midnight Los Angeles time ! ');
     return null;
   });
